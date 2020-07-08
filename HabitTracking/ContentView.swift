@@ -9,9 +9,39 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, World!")
+    
+    @ObservedObject var habits = Habits()
+    @State private var toggleAddView = false
+    
+    func deleteItem(at offset: IndexSet) {
+        habits.habits.remove(atOffsets: offset)
     }
+    
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(habits.habits) { habit in
+                    HStack {
+                        Text("\(habit.title)")
+                    }
+                }
+                .onDelete(perform: deleteItem)
+            }
+            .navigationBarTitle("Habit Tracker")
+            .navigationBarItems(leading: EditButton(), trailing: Button(action: {
+                self.toggleAddView.toggle()
+            }) {
+                Image(systemName: "plus")
+            })
+                .sheet(isPresented: $toggleAddView) {
+                    AddHabitView(habits: self.habits)
+            }
+        }
+    }
+}
+
+class Habits: ObservableObject {
+    @Published var habits = [Habit]()
 }
 
 struct ContentView_Previews: PreviewProvider {
