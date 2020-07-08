@@ -21,12 +21,15 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(habits.habits) { habit in
-                    HStack {
-                        Text("\(habit.title)")
+                    NavigationLink(destination: DetailView(habits: self.habits, itemId: habit.id)) {
+                        HStack {
+                            Text("\(habit.title)")
+                        }
                     }
                 }
                 .onDelete(perform: deleteItem)
             }
+            .padding(.top)
             .navigationBarTitle("Habit Tracker")
             .navigationBarItems(leading: EditButton(), trailing: Button(action: {
                 self.toggleAddView.toggle()

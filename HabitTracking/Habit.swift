@@ -9,9 +9,15 @@
 import Foundation
 
 
-struct Habit: Identifiable {
+class Habit: Identifiable {
     let id = UUID()
     let title: String
     let description: String
     var completionCount: Int
+    
+    init(title: String, description: String, completionCount: Int) {
+        self.title = title
+        self.description = description
+        self.completionCount = completionCount
+    }
 }

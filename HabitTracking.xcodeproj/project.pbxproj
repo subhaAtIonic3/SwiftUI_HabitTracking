@@ -15,6 +15,7 @@
 		22DEECE224B5AE87001B4A3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DEECE024B5AE87001B4A3C /* LaunchScreen.storyboard */; };
 		22DEECEA24B5C031001B4A3C /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DEECE924B5C031001B4A3C /* Habit.swift */; };
 		22DEECEC24B5C63C001B4A3C /* AddHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DEECEB24B5C63C001B4A3C /* AddHabitView.swift */; };
+		22DEECEE24B5DB54001B4A3C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DEECED24B5DB54001B4A3C /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		22DEECE324B5AE87001B4A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22DEECE924B5C031001B4A3C /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		22DEECEB24B5C63C001B4A3C /* AddHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitView.swift; sourceTree = "<group>"; };
+		22DEECED24B5DB54001B4A3C /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				22DEECD524B5AE85001B4A3C /* AppDelegate.swift */,
 				22DEECD724B5AE85001B4A3C /* SceneDelegate.swift */,
 				22DEECD924B5AE85001B4A3C /* ContentView.swift */,
+				22DEECED24B5DB54001B4A3C /* DetailView.swift */,
 				22DEECEB24B5C63C001B4A3C /* AddHabitView.swift */,
 				22DEECE924B5C031001B4A3C /* Habit.swift */,
 				22DEECDB24B5AE87001B4A3C /* Assets.xcassets */,
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22DEECD624B5AE85001B4A3C /* AppDelegate.swift in Sources */,
+				22DEECEE24B5DB54001B4A3C /* DetailView.swift in Sources */,
 				22DEECD824B5AE85001B4A3C /* SceneDelegate.swift in Sources */,
 				22DEECEA24B5C031001B4A3C /* Habit.swift in Sources */,
 				22DEECDA24B5AE85001B4A3C /* ContentView.swift in Sources */,
