@@ -15,6 +15,7 @@ struct ContentView: View {
     
     func deleteItem(at offset: IndexSet) {
         habits.habits.remove(atOffsets: offset)
+        habits.save()
     }
     
     var body: some View {
@@ -44,7 +45,36 @@ struct ContentView: View {
 }
 
 class Habits: ObservableObject {
-    @Published var habits = [Habit]()
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Habits.plist")
+    
+    @Published var habits: [Habit]
+    
+    init() {
+        self.habits = []
+        self.getSavedData()
+    }
+    
+    func save() {
+        let encoder = PropertyListEncoder()
+        do {
+           let data = try encoder.encode(habits)
+            try data.write(to: dataFilePath!)
+        } catch {
+            print("Unable to update data \(error)")
+        }
+    }
+    
+    func getSavedData() {
+        guard let data = try? Data(contentsOf: dataFilePath!) else {
+            return
+        }
+        let decoder = PropertyListDecoder()
+        do {
+            habits = try decoder.decode([Habit].self, from: data)
+        } catch {
+            print("Unable to decode \(error)")
+        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {

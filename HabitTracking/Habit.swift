@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Habit: Identifiable {
+class Habit: Identifiable, Codable {
     let id = UUID()
     let title: String
     let description: String

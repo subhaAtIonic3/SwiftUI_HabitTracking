@@ -31,9 +31,11 @@ struct DetailView: View {
                 Stepper("Completion Count: \(count)", onIncrement: {
                     self.habit.completionCount += 1
                     self.count += 1
+                    self.habits.save()
                 }, onDecrement: {
                     self.habit.completionCount -= 1
                     self.count -= 1
+                    self.habits.save()
                 })
             }
             .padding()

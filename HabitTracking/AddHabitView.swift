@@ -30,6 +30,7 @@ struct AddHabitView: View {
                 }
                 
                 self.habits.habits.append(Habit(title: self.habitTitle, description: self.habitDescription, completionCount: 0))
+                self.habits.save()
                 self.presentationMode.wrappedValue.dismiss()
             })
                 .alert(isPresented: $toggleAlert) {
